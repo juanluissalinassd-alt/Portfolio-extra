@@ -25,7 +25,7 @@ body {
   font-family: var(--font-main);
   overflow-x: hidden;
   padding-bottom: 200px;
-  overflow: hidden; /* Hide scrollbar during loading */
+  overflow: hidden; 
 }
 
 body.loaded {
@@ -89,7 +89,7 @@ body.loaded #main-content {
 }
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* === TITLE SECTION === */
+/* === HEADER SECTION === */
 .header {
   margin-top: 80px;
   padding: 40px 20px;
@@ -103,26 +103,38 @@ body.loaded #main-content {
   text-transform: uppercase;
   color: var(--text);
   mix-blend-mode: exclusion;
-}
-.subtitle {
-  background: var(--text);
-  color: var(--bg);
-  display: inline-block;
-  padding: 5px 10px;
-  font-weight: bold;
-  margin-top: 20px;
-  text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
-/* === IMAGES: CLEAN & COMPLETE === */
+/* === NEW BIO STYLING === */
+.bio-section {
+  max-width: 800px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border-left: 2px solid var(--red);
+  padding-left: 20px;
+}
+
+.bio-section p {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.highlight {
+  color: var(--red);
+  font-weight: bold;
+}
+
+/* === IMAGES === */
 .project-list {
   display: flex; flex-direction: column; 
-  background: #111; /* Subtle separation from main bg */
+  background: #111; 
 }
 
 .block {
   width: 100%;
-  /* This centers the image and gives it breathing room */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,23 +144,18 @@ body.loaded #main-content {
 }
 
 .project-img {
-  /* Logic: Never be taller than 90% of screen height */
   max-height: 90vh; 
-  /* Logic: Never be wider than 100% of width */
   max-width: 100%;
   width: auto; 
   display: block;
-  
-  /* Style: Clean but dark initially */
   filter: grayscale(100%) brightness(0.8);
   transition: all 0.4s ease;
   box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
-/* HOVER: Bring back full color and brightness */
 .block:hover .project-img {
   filter: grayscale(0%) brightness(1);
-  transform: scale(1.01); /* Tiny pop */
+  transform: scale(1.01); 
 }
 
 /* === FOOTER === */
@@ -179,7 +186,16 @@ body.loaded #main-content {
 
   <div class="header">
     <div class="title">JUAN LUIS<br>SALINAS</div>
-    <div class="subtitle">PORTAFOLIO '25</div>
+    
+    <div class="bio-section">
+      <p>Art direction before decoration.</p>
+      <p>Fine art over trend. Concept over beauty.</p>
+      <p>Bodies distorted, silhouettes weaponized, images designed to feel hostile.</p>
+      <p class="highlight">Anti-beauty, anti-trend, anti-comfort.</p>
+      <p>Influenced by film, nihilism, and personal growth.</p>
+      <p style="margin-top: 2rem;">This work does not ask for approval, and it is not meant for everybody.</p>
+    </div>
+
   </div>
 
   <div class="project-list">
@@ -231,8 +247,8 @@ body.loaded #main-content {
   </div>
 
   <div class="footer">
-    NO COPYRIGHT INTENDED<br>
-    END OF TRANSMISSION
+    Beauty was never the point. <br>
+    The body obeys. The image survives.
   </div>
 
 </div>
